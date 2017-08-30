@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.labTitle = new System.Windows.Forms.Label();
-            this.btnUserManager = new System.Windows.Forms.Button();
+            this.btnGJInput = new System.Windows.Forms.Button();
+            this.btnScan = new System.Windows.Forms.Button();
+            this.btnQuery = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labTitle
@@ -44,24 +46,50 @@
             this.labTitle.TabIndex = 0;
             this.labTitle.Text = "欢迎 XXXX公司 用户登录";
             // 
-            // btnUserManager
+            // btnGJInput
             // 
-            this.btnUserManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnUserManager.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnUserManager.Location = new System.Drawing.Point(21, 195);
-            this.btnUserManager.Name = "btnUserManager";
-            this.btnUserManager.Size = new System.Drawing.Size(242, 53);
-            this.btnUserManager.TabIndex = 1;
-            this.btnUserManager.Text = "系统管理";
-            this.btnUserManager.UseVisualStyleBackColor = false;
-            this.btnUserManager.Click += new System.EventHandler(this.btnUserManager_Click);
+            this.btnGJInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGJInput.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnGJInput.Location = new System.Drawing.Point(21, 200);
+            this.btnGJInput.Name = "btnGJInput";
+            this.btnGJInput.Size = new System.Drawing.Size(249, 82);
+            this.btnGJInput.TabIndex = 1;
+            this.btnGJInput.Text = "国检审单录入";
+            this.btnGJInput.UseVisualStyleBackColor = false;
+            this.btnGJInput.Click += new System.EventHandler(this.btnGJInput_Click);
+            // 
+            // btnScan
+            // 
+            this.btnScan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnScan.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnScan.Location = new System.Drawing.Point(302, 200);
+            this.btnScan.Name = "btnScan";
+            this.btnScan.Size = new System.Drawing.Size(249, 82);
+            this.btnScan.TabIndex = 2;
+            this.btnScan.Text = "扫描货品";
+            this.btnScan.UseVisualStyleBackColor = false;
+            this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
+            // 
+            // btnQuery
+            // 
+            this.btnQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnQuery.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnQuery.Location = new System.Drawing.Point(582, 200);
+            this.btnQuery.Name = "btnQuery";
+            this.btnQuery.Size = new System.Drawing.Size(249, 82);
+            this.btnQuery.TabIndex = 3;
+            this.btnQuery.Text = "查询统计";
+            this.btnQuery.UseVisualStyleBackColor = false;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 585);
-            this.Controls.Add(this.btnUserManager);
+            this.ClientSize = new System.Drawing.Size(855, 350);
+            this.Controls.Add(this.btnQuery);
+            this.Controls.Add(this.btnScan);
+            this.Controls.Add(this.btnGJInput);
             this.Controls.Add(this.labTitle);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
@@ -78,7 +106,9 @@
         #endregion
 
         private System.Windows.Forms.Label labTitle;
-        private System.Windows.Forms.Button btnUserManager;
+        private System.Windows.Forms.Button btnGJInput;
+        private System.Windows.Forms.Button btnScan;
+        private System.Windows.Forms.Button btnQuery;
     }
 }
 

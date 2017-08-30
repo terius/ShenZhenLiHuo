@@ -17,23 +17,23 @@ namespace ShenZhenLiHuo
         private void Main_Load(object sender, EventArgs e)
         {
             labTitle.Text = "欢迎 " + (GlobalVariable.LoginUserInfo.HY_NAME) + " 用户登录";
-            if (GlobalVariable.LoginUserInfo.UserName.Equals("admin", StringComparison.CurrentCultureIgnoreCase))
-            {
-                btnUserManager.Visible = true;
-                btnImport.Visible = false;
-                //   btnReport.Visible = false;
-                btnScan.Visible = false;
-                btnScanFast.Visible = false;
+            //if (GlobalVariable.LoginUserInfo.UserName.Equals("admin", StringComparison.CurrentCultureIgnoreCase))
+            //{
+            //    btnGJInput.Visible = true;
+            //    btnImport.Visible = false;
+            //    //   btnReport.Visible = false;
+            //    btnScan.Visible = false;
+            //    btnScanFast.Visible = false;
 
-            }
-            else
-            {
-                btnUserManager.Visible = false;
-                btnImport.Visible = true;
-                //    btnReport.Visible = true;
-                btnScan.Visible = true;
-                btnScanFast.Visible = true;
-            }
+            //}
+            //else
+            //{
+            //    btnGJInput.Visible = false;
+            //    btnImport.Visible = true;
+            //    //    btnReport.Visible = true;
+            //    btnScan.Visible = true;
+            //    btnScanFast.Visible = true;
+            //}
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
@@ -42,38 +42,20 @@ namespace ShenZhenLiHuo
             // Application.Exit();
         }
 
-        private void btnUserManager_Click(object sender, EventArgs e)
-        {
-            UserManager frm = new UserManager();
-            frm.ShowDialog();
-        }
-
-        private void btnImport_Click(object sender, EventArgs e)
-        {
-            Import frm = new Import();
-            //  frm.userInfo = this.userInfo;
-            frm.ShowDialog();
-        }
-
         private void btnScan_Click(object sender, EventArgs e)
         {
-            Scan frm = new Scan();
-            //   frm.userInfo = this.userInfo;
+            ScanForm frm = new ScanForm();
             frm.ShowDialog();
         }
 
-        private void btnReport_Click(object sender, EventArgs e)
+        private void btnGJInput_Click(object sender, EventArgs e)
         {
-            Query frm = new Query();
-            //      frm.userInfo = this.userInfo;
-            frm.ShowDialog();
+
         }
 
-        private void btnScanFast_Click(object sender, EventArgs e)
+        private void btnQuery_Click(object sender, EventArgs e)
         {
-            ScanFast frm = new ScanFast();
-            // frm.userInfo = this.userInfo;
-            frm.ShowDialog();
+
         }
     }
 }
