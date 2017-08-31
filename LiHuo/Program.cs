@@ -19,7 +19,7 @@ namespace ShenZhenLiHuo
             Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
             #endregion
-            Application.Run(new Login());
+            Application.Run(new ScanForm());
         }
 
         /// <summary>

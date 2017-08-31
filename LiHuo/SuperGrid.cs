@@ -33,6 +33,7 @@ namespace FGTran
             this.AutoGenerateColumns = false;
             this.RowTemplate.MinimumHeight = 35;
             this.RowPostPaint += SuperGrid_RowPostPaint;
+            //this.ColumnHeadersDefaultCellStyle.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
         }
 
         void SuperGrid_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

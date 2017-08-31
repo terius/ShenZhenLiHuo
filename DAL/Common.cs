@@ -279,7 +279,7 @@ namespace DAL
         }
 
 
-        public int InsertByHashtable(string tableName, Hashtable paramlist)
+        public int InsertByHashtable(string tableName, Hashtable paramlist, bool returnId = false)
         {
             StringBuilder sb = new StringBuilder("insert into {0}({1}) values({2})");
             StringBuilder sbColumns = new StringBuilder();
@@ -303,8 +303,17 @@ namespace DAL
                     sbValues.Append(",@" + item.Key);
                 }
             }
-            string sql = string.Format("insert into {0}({1}) values({2})", tableName, sbColumns.ToString(), sbValues.ToString());
-            return DbHelperSQL.ExecuteSql(sql, paramlist);
+            if (returnId)
+            {
+                string sql = string.Format("insert into {0}({1}) values({2});select @@IDENTITY as id", tableName, sbColumns.ToString(), sbValues.ToString());
+                return InsertReturnID(sql, paramlist);
+            }
+            else
+            {
+                string sql = string.Format("insert into {0}({1}) values({2})", tableName, sbColumns.ToString(), sbValues.ToString());
+                return DbHelperSQL.ExecuteSql(sql, paramlist);
+            }
+         
 
         }
 

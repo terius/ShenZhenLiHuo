@@ -18,6 +18,8 @@ namespace ShenZhenLiHuo
         {
             InitializeComponent();
             label4.Text = "V"+System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+       
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -28,16 +30,10 @@ namespace ShenZhenLiHuo
 
         private void login()
         {
-
-            this.Hide();
-            GlobalVariable.LoginUserInfo = new Model.UserInfo();
-            GlobalVariable.LoginUserInfo.HY_NAME = "xxx公司";
-            GlobalVariable.LoginUserInfo.id = 1;
-            GlobalVariable.LoginUserInfo.Lever = "3";
-            GlobalVariable.LoginUserInfo.UserName = "user001";
-            GlobalVariable.LoginUserInfo.UserPassword = "99999";
-            Main mainForm = new Main();
-            mainForm.Show();
+            this.Visible = false;
+            GlobalVariable.CreateTestLoginInfo();
+           // Main mainForm = new Main();
+         //   mainForm.Show();
             return;
 
             //string userName = tbUser.Text.Trim();
@@ -91,6 +87,11 @@ namespace ShenZhenLiHuo
             {
                 login();
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+          
         }
     }
 }

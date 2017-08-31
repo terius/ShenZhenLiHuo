@@ -11,6 +11,7 @@ namespace ShenZhenLiHuo
         public Main()
         {
             InitializeComponent();
+            GlobalVariable.CreateTestLoginInfo();
             //  userInfo = userBLL.GetUserInfoById(userId);
         }
 

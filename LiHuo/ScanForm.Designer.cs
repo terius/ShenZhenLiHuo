@@ -28,33 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.superGrid1 = new FGTran.SuperGrid();
-            this.tbNo = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdAutoScan = new System.Windows.Forms.RadioButton();
-            this.rdmuScan = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labBillNo = new System.Windows.Forms.Label();
+            this.txtBillNo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.labFangXing = new System.Windows.Forms.Label();
+            this.labWuShuJu = new System.Windows.Forms.Label();
+            this.labChaYan = new System.Windows.Forms.Label();
             this.labScanNo = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.labBuKong = new System.Windows.Forms.Label();
-            this.labWuShuJu = new System.Windows.Forms.Label();
-            this.labFeiBuKong = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labBillNo = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdmuScan = new System.Windows.Forms.RadioButton();
+            this.rdAutoScan = new System.Windows.Forms.RadioButton();
+            this.tbNo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.superGrid1 = new FGTran.SuperGrid();
+            this.labMessage = new System.Windows.Forms.Label();
+            this.labNowScan = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superGrid1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labNowScan);
+            this.panel1.Controls.Add(this.labMessage);
+            this.panel1.Controls.Add(this.txtBillNo);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.labScanNo);
@@ -67,114 +73,77 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1191, 212);
+            this.panel1.Size = new System.Drawing.Size(1099, 212);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // txtBillNo
             // 
-            this.panel2.Controls.Add(this.superGrid1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 212);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1191, 500);
-            this.panel2.TabIndex = 1;
+            this.txtBillNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBillNo.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtBillNo.Location = new System.Drawing.Point(125, 76);
+            this.txtBillNo.MaxLength = 34;
+            this.txtBillNo.Name = "txtBillNo";
+            this.txtBillNo.Size = new System.Drawing.Size(276, 29);
+            this.txtBillNo.TabIndex = 17;
+            this.txtBillNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBillNo_KeyDown);
             // 
-            // superGrid1
+            // label2
             // 
-            this.superGrid1.AllowUserToAddRows = false;
-            this.superGrid1.AllowUserToDeleteRows = false;
-            this.superGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.superGrid1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.superGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.superGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.superGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superGrid1.Location = new System.Drawing.Point(0, 0);
-            this.superGrid1.Name = "superGrid1";
-            this.superGrid1.PageSize = 15;
-            this.superGrid1.ReadOnly = true;
-            this.superGrid1.RowTemplate.Height = 35;
-            this.superGrid1.Size = new System.Drawing.Size(1191, 500);
-            this.superGrid1.TabIndex = 1;
+            this.label2.BackColor = System.Drawing.Color.Red;
+            this.label2.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(994, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(143, 86);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "扫描失败";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tbNo
+            // panel3
             // 
-            this.tbNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbNo.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbNo.Location = new System.Drawing.Point(123, 25);
-            this.tbNo.MaxLength = 50;
-            this.tbNo.Name = "tbNo";
-            this.tbNo.Size = new System.Drawing.Size(439, 29);
-            this.tbNo.TabIndex = 9;
-            this.tbNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbNo_KeyDown);
+            this.panel3.Controls.Add(this.labFangXing);
+            this.panel3.Controls.Add(this.labWuShuJu);
+            this.panel3.Controls.Add(this.labChaYan);
+            this.panel3.Location = new System.Drawing.Point(407, 90);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(572, 109);
+            this.panel3.TabIndex = 15;
             // 
-            // label3
+            // labFangXing
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(9, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 21);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "扫描条码：";
+            this.labFangXing.BackColor = System.Drawing.Color.Silver;
+            this.labFangXing.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labFangXing.ForeColor = System.Drawing.Color.White;
+            this.labFangXing.Location = new System.Drawing.Point(21, 10);
+            this.labFangXing.Name = "labFangXing";
+            this.labFangXing.Size = new System.Drawing.Size(124, 88);
+            this.labFangXing.TabIndex = 10;
+            this.labFangXing.Text = "放行";
+            this.labFangXing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupBox1
+            // labWuShuJu
             // 
-            this.groupBox1.Controls.Add(this.rdmuScan);
-            this.groupBox1.Controls.Add(this.rdAutoScan);
-            this.groupBox1.Location = new System.Drawing.Point(589, 15);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(255, 53);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "扫描类型";
+            this.labWuShuJu.BackColor = System.Drawing.Color.Silver;
+            this.labWuShuJu.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labWuShuJu.ForeColor = System.Drawing.Color.White;
+            this.labWuShuJu.Location = new System.Drawing.Point(407, 10);
+            this.labWuShuJu.Name = "labWuShuJu";
+            this.labWuShuJu.Size = new System.Drawing.Size(123, 86);
+            this.labWuShuJu.TabIndex = 13;
+            this.labWuShuJu.Text = "无数据";
+            this.labWuShuJu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // rdAutoScan
+            // labChaYan
             // 
-            this.rdAutoScan.AutoSize = true;
-            this.rdAutoScan.Location = new System.Drawing.Point(18, 21);
-            this.rdAutoScan.Name = "rdAutoScan";
-            this.rdAutoScan.Size = new System.Drawing.Size(71, 16);
-            this.rdAutoScan.TabIndex = 0;
-            this.rdAutoScan.TabStop = true;
-            this.rdAutoScan.Text = "自动扫描";
-            this.rdAutoScan.UseVisualStyleBackColor = true;
-            // 
-            // rdmuScan
-            // 
-            this.rdmuScan.AutoSize = true;
-            this.rdmuScan.Location = new System.Drawing.Point(119, 21);
-            this.rdmuScan.Name = "rdmuScan";
-            this.rdmuScan.Size = new System.Drawing.Size(71, 16);
-            this.rdmuScan.TabIndex = 1;
-            this.rdmuScan.TabStop = true;
-            this.rdmuScan.Text = "手动扫描";
-            this.rdmuScan.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(12, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 21);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "分运单号：";
-            // 
-            // labBillNo
-            // 
-            this.labBillNo.AutoSize = true;
-            this.labBillNo.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labBillNo.Location = new System.Drawing.Point(119, 78);
-            this.labBillNo.Name = "labBillNo";
-            this.labBillNo.Size = new System.Drawing.Size(0, 21);
-            this.labBillNo.TabIndex = 12;
+            this.labChaYan.BackColor = System.Drawing.Color.Silver;
+            this.labChaYan.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labChaYan.ForeColor = System.Drawing.Color.White;
+            this.labChaYan.Location = new System.Drawing.Point(216, 10);
+            this.labChaYan.Name = "labChaYan";
+            this.labChaYan.Size = new System.Drawing.Size(145, 88);
+            this.labChaYan.TabIndex = 11;
+            this.labChaYan.Text = "海关查验";
+            this.labChaYan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labScanNo
             // 
@@ -195,84 +164,150 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "当前条码：";
             // 
-            // panel3
+            // labBillNo
             // 
-            this.panel3.Controls.Add(this.labBuKong);
-            this.panel3.Controls.Add(this.labWuShuJu);
-            this.panel3.Controls.Add(this.labFeiBuKong);
-            this.panel3.Location = new System.Drawing.Point(343, 78);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(572, 109);
-            this.panel3.TabIndex = 15;
+            this.labBillNo.AutoSize = true;
+            this.labBillNo.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labBillNo.Location = new System.Drawing.Point(119, 78);
+            this.labBillNo.Name = "labBillNo";
+            this.labBillNo.Size = new System.Drawing.Size(0, 21);
+            this.labBillNo.TabIndex = 12;
             // 
-            // labBuKong
+            // label1
             // 
-            this.labBuKong.BackColor = System.Drawing.Color.Silver;
-            this.labBuKong.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labBuKong.ForeColor = System.Drawing.Color.White;
-            this.labBuKong.Location = new System.Drawing.Point(21, 10);
-            this.labBuKong.Name = "labBuKong";
-            this.labBuKong.Size = new System.Drawing.Size(124, 88);
-            this.labBuKong.TabIndex = 10;
-            this.labBuKong.Text = "布控";
-            this.labBuKong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(12, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 21);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "分运单号：";
             // 
-            // labWuShuJu
+            // groupBox1
             // 
-            this.labWuShuJu.BackColor = System.Drawing.Color.Silver;
-            this.labWuShuJu.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labWuShuJu.ForeColor = System.Drawing.Color.White;
-            this.labWuShuJu.Location = new System.Drawing.Point(407, 10);
-            this.labWuShuJu.Name = "labWuShuJu";
-            this.labWuShuJu.Size = new System.Drawing.Size(123, 86);
-            this.labWuShuJu.TabIndex = 13;
-            this.labWuShuJu.Text = "无数据";
-            this.labWuShuJu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.groupBox1.Controls.Add(this.rdmuScan);
+            this.groupBox1.Controls.Add(this.rdAutoScan);
+            this.groupBox1.Location = new System.Drawing.Point(589, 15);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(255, 53);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "扫描类型";
             // 
-            // labFeiBuKong
+            // rdmuScan
             // 
-            this.labFeiBuKong.BackColor = System.Drawing.Color.Silver;
-            this.labFeiBuKong.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labFeiBuKong.ForeColor = System.Drawing.Color.White;
-            this.labFeiBuKong.Location = new System.Drawing.Point(216, 10);
-            this.labFeiBuKong.Name = "labFeiBuKong";
-            this.labFeiBuKong.Size = new System.Drawing.Size(129, 88);
-            this.labFeiBuKong.TabIndex = 11;
-            this.labFeiBuKong.Text = "非布控";
-            this.labFeiBuKong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rdmuScan.AutoSize = true;
+            this.rdmuScan.Location = new System.Drawing.Point(119, 21);
+            this.rdmuScan.Name = "rdmuScan";
+            this.rdmuScan.Size = new System.Drawing.Size(71, 16);
+            this.rdmuScan.TabIndex = 1;
+            this.rdmuScan.Text = "手动扫描";
+            this.rdmuScan.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // rdAutoScan
             // 
-            this.label2.BackColor = System.Drawing.Color.Red;
-            this.label2.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(994, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 86);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "扫描失败";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rdAutoScan.AutoSize = true;
+            this.rdAutoScan.Checked = true;
+            this.rdAutoScan.Location = new System.Drawing.Point(18, 21);
+            this.rdAutoScan.Name = "rdAutoScan";
+            this.rdAutoScan.Size = new System.Drawing.Size(71, 16);
+            this.rdAutoScan.TabIndex = 0;
+            this.rdAutoScan.TabStop = true;
+            this.rdAutoScan.Text = "自动扫描";
+            this.rdAutoScan.UseVisualStyleBackColor = true;
+            // 
+            // tbNo
+            // 
+            this.tbNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbNo.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbNo.Location = new System.Drawing.Point(123, 25);
+            this.tbNo.MaxLength = 34;
+            this.tbNo.Name = "tbNo";
+            this.tbNo.Size = new System.Drawing.Size(439, 29);
+            this.tbNo.TabIndex = 9;
+            this.tbNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbNo_KeyDown);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(9, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 21);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "扫描条码：";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.superGrid1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 212);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1099, 397);
+            this.panel2.TabIndex = 1;
+            // 
+            // superGrid1
+            // 
+            this.superGrid1.AllowUserToAddRows = false;
+            this.superGrid1.AllowUserToDeleteRows = false;
+            this.superGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.superGrid1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.superGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.superGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.superGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superGrid1.Location = new System.Drawing.Point(0, 0);
+            this.superGrid1.MultiSelect = false;
+            this.superGrid1.Name = "superGrid1";
+            this.superGrid1.PageSize = 15;
+            this.superGrid1.ReadOnly = true;
+            this.superGrid1.RowTemplate.Height = 35;
+            this.superGrid1.Size = new System.Drawing.Size(1099, 397);
+            this.superGrid1.TabIndex = 1;
+            // 
+            // labMessage
+            // 
+            this.labMessage.AutoSize = true;
+            this.labMessage.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labMessage.ForeColor = System.Drawing.Color.Red;
+            this.labMessage.Location = new System.Drawing.Point(12, 155);
+            this.labMessage.Name = "labMessage";
+            this.labMessage.Size = new System.Drawing.Size(0, 21);
+            this.labMessage.TabIndex = 18;
+            // 
+            // labNowScan
+            // 
+            this.labNowScan.AutoSize = true;
+            this.labNowScan.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labNowScan.Location = new System.Drawing.Point(131, 122);
+            this.labNowScan.Name = "labNowScan";
+            this.labNowScan.Size = new System.Drawing.Size(0, 21);
+            this.labNowScan.TabIndex = 19;
             // 
             // ScanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 712);
+            this.ClientSize = new System.Drawing.Size(1099, 609);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ScanForm";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "扫描条码";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.superGrid1)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.superGrid1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,8 +328,11 @@
         private System.Windows.Forms.RadioButton rdAutoScan;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label labBuKong;
+        private System.Windows.Forms.Label labFangXing;
         private System.Windows.Forms.Label labWuShuJu;
-        private System.Windows.Forms.Label labFeiBuKong;
+        private System.Windows.Forms.Label labChaYan;
+        private System.Windows.Forms.TextBox txtBillNo;
+        private System.Windows.Forms.Label labMessage;
+        private System.Windows.Forms.Label labNowScan;
     }
 }
