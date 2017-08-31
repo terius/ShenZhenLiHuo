@@ -1,6 +1,6 @@
 ﻿namespace ShenZhenLiHuo
 {
-    partial class Query
+    partial class QueryData
     {
         /// <summary>
         /// Required designer variable.

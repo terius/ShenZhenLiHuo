@@ -14,13 +14,13 @@ using System.Windows.Forms;
 
 namespace ShenZhenLiHuo
 {
-    public partial class Query : Form
+    public partial class QueryData : Form
     {
         private readonly COMMON comm = new COMMON();
 
         public UserInfo userInfo { get; set; }
         readonly string DLGS = System.Configuration.ConfigurationManager.AppSettings["DLGS"];
-        public Query()
+        public QueryData()
         {
             InitializeComponent();
         }

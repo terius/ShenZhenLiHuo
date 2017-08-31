@@ -40,8 +40,6 @@
     <Compile Include="ScanHeadBLL.cs" />
     <Compile Include="UserBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="V2BLL.cs" />
-    <Compile Include="V1BLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
