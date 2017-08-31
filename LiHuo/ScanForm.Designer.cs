@@ -30,6 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labNowScan = new System.Windows.Forms.Label();
+            this.labMessage = new System.Windows.Forms.Label();
             this.txtBillNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -47,8 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.superGrid1 = new FGTran.SuperGrid();
-            this.labMessage = new System.Windows.Forms.Label();
-            this.labNowScan = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.labNowScan);
             this.panel1.Controls.Add(this.labMessage);
             this.panel1.Controls.Add(this.txtBillNo);
@@ -73,8 +75,27 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1099, 212);
+            this.panel1.Size = new System.Drawing.Size(1195, 212);
             this.panel1.TabIndex = 0;
+            // 
+            // labNowScan
+            // 
+            this.labNowScan.AutoSize = true;
+            this.labNowScan.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labNowScan.Location = new System.Drawing.Point(131, 122);
+            this.labNowScan.Name = "labNowScan";
+            this.labNowScan.Size = new System.Drawing.Size(0, 21);
+            this.labNowScan.TabIndex = 19;
+            // 
+            // labMessage
+            // 
+            this.labMessage.AutoSize = true;
+            this.labMessage.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labMessage.ForeColor = System.Drawing.Color.Red;
+            this.labMessage.Location = new System.Drawing.Point(12, 155);
+            this.labMessage.Name = "labMessage";
+            this.labMessage.Size = new System.Drawing.Size(0, 21);
+            this.labMessage.TabIndex = 18;
             // 
             // txtBillNo
             // 
@@ -89,10 +110,10 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.Red;
+            this.label2.BackColor = System.Drawing.Color.Silver;
             this.label2.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(994, 90);
+            this.label2.Location = new System.Drawing.Point(1021, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 86);
             this.label2.TabIndex = 16;
@@ -187,9 +208,10 @@
             // 
             this.groupBox1.Controls.Add(this.rdmuScan);
             this.groupBox1.Controls.Add(this.rdAutoScan);
+            this.groupBox1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox1.Location = new System.Drawing.Point(589, 15);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(255, 53);
+            this.groupBox1.Size = new System.Drawing.Size(276, 69);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "扫描类型";
@@ -197,9 +219,9 @@
             // rdmuScan
             // 
             this.rdmuScan.AutoSize = true;
-            this.rdmuScan.Location = new System.Drawing.Point(119, 21);
+            this.rdmuScan.Location = new System.Drawing.Point(146, 29);
             this.rdmuScan.Name = "rdmuScan";
-            this.rdmuScan.Size = new System.Drawing.Size(71, 16);
+            this.rdmuScan.Size = new System.Drawing.Size(107, 24);
             this.rdmuScan.TabIndex = 1;
             this.rdmuScan.Text = "手动扫描";
             this.rdmuScan.UseVisualStyleBackColor = true;
@@ -208,9 +230,9 @@
             // 
             this.rdAutoScan.AutoSize = true;
             this.rdAutoScan.Checked = true;
-            this.rdAutoScan.Location = new System.Drawing.Point(18, 21);
+            this.rdAutoScan.Location = new System.Drawing.Point(16, 29);
             this.rdAutoScan.Name = "rdAutoScan";
-            this.rdAutoScan.Size = new System.Drawing.Size(71, 16);
+            this.rdAutoScan.Size = new System.Drawing.Size(107, 24);
             this.rdAutoScan.TabIndex = 0;
             this.rdAutoScan.TabStop = true;
             this.rdAutoScan.Text = "自动扫描";
@@ -243,7 +265,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 212);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1099, 397);
+            this.panel2.Size = new System.Drawing.Size(1195, 496);
             this.panel2.TabIndex = 1;
             // 
             // superGrid1
@@ -268,39 +290,34 @@
             this.superGrid1.PageSize = 15;
             this.superGrid1.ReadOnly = true;
             this.superGrid1.RowTemplate.Height = 35;
-            this.superGrid1.Size = new System.Drawing.Size(1099, 397);
+            this.superGrid1.Size = new System.Drawing.Size(1195, 496);
             this.superGrid1.TabIndex = 1;
             // 
-            // labMessage
+            // button1
             // 
-            this.labMessage.AutoSize = true;
-            this.labMessage.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labMessage.ForeColor = System.Drawing.Color.Red;
-            this.labMessage.Location = new System.Drawing.Point(12, 155);
-            this.labMessage.Name = "labMessage";
-            this.labMessage.Size = new System.Drawing.Size(0, 21);
-            this.labMessage.TabIndex = 18;
-            // 
-            // labNowScan
-            // 
-            this.labNowScan.AutoSize = true;
-            this.labNowScan.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labNowScan.Location = new System.Drawing.Point(131, 122);
-            this.labNowScan.Name = "labNowScan";
-            this.labNowScan.Size = new System.Drawing.Size(0, 21);
-            this.labNowScan.TabIndex = 19;
+            this.button1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(927, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 43);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "纠错";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ScanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1099, 609);
+            this.ClientSize = new System.Drawing.Size(1195, 708);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ScanForm";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "扫描条码";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -334,5 +351,6 @@
         private System.Windows.Forms.TextBox txtBillNo;
         private System.Windows.Forms.Label labMessage;
         private System.Windows.Forms.Label labNowScan;
+        private System.Windows.Forms.Button button1;
     }
 }

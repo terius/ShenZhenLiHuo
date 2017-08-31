@@ -56,7 +56,8 @@ namespace ShenZhenLiHuo
 
         private void btnQuery_Click(object sender, EventArgs e)
         {
-
+            QueryForm frm = new QueryForm();
+            frm.ShowDialog();
         }
     }
 }

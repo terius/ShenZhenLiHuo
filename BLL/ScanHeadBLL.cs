@@ -18,10 +18,17 @@ namespace BLL
 
         }
 
-        public int InsertNewDataToTmp(string billno)
+        public int InsertNewDataToTmp(string billno,int setMaxNo)
         {
             int insertId = 0;
-            GetMaxSCANNO();
+            if (setMaxNo > 0)
+            {
+                maxScanNo = setMaxNo - 1;
+            }
+            else
+            {
+                GetMaxSCANNO();
+            }
             if (CheckBillNOInTmp(billno))//tmp表已存在此billno
             {
                 insertId = CopyTmp(billno);

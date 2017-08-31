@@ -32,8 +32,8 @@ namespace ShenZhenLiHuo
         {
             this.Visible = false;
             GlobalVariable.CreateTestLoginInfo();
-           // Main mainForm = new Main();
-         //   mainForm.Show();
+            Main mainForm = new Main();
+            mainForm.Show();
             return;
 
             //string userName = tbUser.Text.Trim();
