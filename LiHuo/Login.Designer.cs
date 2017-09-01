@@ -47,7 +47,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(375, 49);
             this.label1.TabIndex = 0;
-            this.label1.Text = "杭州电商快件理货系统";
+            this.label1.Text = "深圳电商快件理货系统";
             // 
             // label2
             // 

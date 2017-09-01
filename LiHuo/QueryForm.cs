@@ -106,6 +106,9 @@ namespace ShenZhenLiHuo
              + " (case SEND_TYPE when 2 then 1 else 0 end) as NODATA from " + table + " where 1=1 " + sb.ToString();
             DataTable dt = comm.Query(sql, ht);
             this.superGrid1.DataSource = dt;
+            labALLText.Text = "扫描 " + dt.Rows.Count + " 件";
+            labStatusTEXT.Text = string.Format("放行 {0} 件    查验 {1} 件    无数据 {2} 件",
+                dt.Select("FANGXING = 1").Length, dt.Select("CHAYAN = 1").Length, dt.Select("NODATA = 1").Length);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
