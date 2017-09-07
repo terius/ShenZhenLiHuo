@@ -10,7 +10,7 @@ namespace BLL
     {
         private readonly COMMON comm = new COMMON();
         int maxScanNo = 0;
-     
+
 
         public void GetMaxSCANNO()
         {
@@ -18,7 +18,7 @@ namespace BLL
 
         }
 
-        public int InsertNewDataToTmp(string billno,int setMaxNo)
+        public int InsertNewDataToTmp(string billno, int setMaxNo)
         {
             int insertId = 0;
             if (setMaxNo > 0)
@@ -29,12 +29,15 @@ namespace BLL
             {
                 GetMaxSCANNO();
             }
+            Loger.LogMessage("maxScanNo:" + maxScanNo);
             if (CheckBillNOInTmp(billno))//tmp表已存在此billno
             {
+                Loger.LogMessage(billno + "在tmp表中");
                 insertId = CopyTmp(billno);
             }
             else
             {
+                Loger.LogMessage(billno + "未在tmp表中");
                 insertId = CopyFromHead(billno);
             }
             return insertId;
@@ -76,6 +79,23 @@ namespace BLL
                     WriteLog(insertId, ht);
                     UpdateList2(drLast["VOYAGE_NO"].ToString(), true);
                 }
+                else
+                {
+                    ht["SHIP_ID"] = "111111";
+                    ht["VOYAGE_NO"] = "111111";
+                    ht["I_E_FLAG"] = "I";
+                    ht["I_E_DATE"] = DateTime.Now;
+                    ht["PACK_NO"] = 1;
+                    ht["DEC_TYPE"] = 0;
+                    ht["SCAN_NO"] = maxScanNo + 1;
+                    ht["Multi_Pack_No"] = 1;
+                    ht["SEND_TYPE"] = 2;
+                    insertId = comm.InsertByHashtable("EHS_SCAN_TMP1", ht, true);
+                    WriteLog(insertId, ht);
+                    UpdateList2("111111", true);
+                }
+               
+
 
             }
             return insertId;
@@ -115,7 +135,7 @@ namespace BLL
 
         private void WriteLog(int insertId, Hashtable htparm)
         {
-            StringHelper.WriteLog(string.Format("#1,{0},{1},{2}", 
+            StringHelper.WriteLog(string.Format("#1,{0},{1},{2}",
                 htparm["SCAN_NO"].ToString(), htparm["SEND_TYPE"].ToString(), htparm["BILL_NO"].ToString()));
             string sql = "update EHS_SCAN_TMP1 set send_time =getdate() where id=@id";
             Hashtable ht = new Hashtable();

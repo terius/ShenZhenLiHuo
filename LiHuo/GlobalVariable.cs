@@ -9,7 +9,7 @@ namespace ShenZhenLiHuo
         public static void CreateTestLoginInfo()
         {
             GlobalVariable.LoginUserInfo = new Model.UserInfo();
-            GlobalVariable.LoginUserInfo.HY_NAME = "xxx公司";
+            GlobalVariable.LoginUserInfo.HY_NAME = "联邦快递公司";
             GlobalVariable.LoginUserInfo.id = 1;
             GlobalVariable.LoginUserInfo.Lever = "3";
             GlobalVariable.LoginUserInfo.UserName = "user001";

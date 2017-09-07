@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.labNowScan = new System.Windows.Forms.Label();
             this.labMessage = new System.Windows.Forms.Label();
-            this.txtBillNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labFangXing = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.labScanNo = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.labBillNo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdmuScan = new System.Windows.Forms.RadioButton();
             this.rdAutoScan = new System.Windows.Forms.RadioButton();
@@ -49,7 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.superGrid1 = new FGTran.SuperGrid();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -62,13 +61,11 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.labNowScan);
             this.panel1.Controls.Add(this.labMessage);
-            this.panel1.Controls.Add(this.txtBillNo);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.labScanNo);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.labBillNo);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.tbNo);
             this.panel1.Controls.Add(this.label3);
@@ -78,11 +75,23 @@
             this.panel1.Size = new System.Drawing.Size(1195, 212);
             this.panel1.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(927, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 43);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "纠错";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // labNowScan
             // 
             this.labNowScan.AutoSize = true;
             this.labNowScan.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labNowScan.Location = new System.Drawing.Point(131, 122);
+            this.labNowScan.Location = new System.Drawing.Point(131, 90);
             this.labNowScan.Name = "labNowScan";
             this.labNowScan.Size = new System.Drawing.Size(0, 21);
             this.labNowScan.TabIndex = 19;
@@ -96,17 +105,6 @@
             this.labMessage.Name = "labMessage";
             this.labMessage.Size = new System.Drawing.Size(0, 21);
             this.labMessage.TabIndex = 18;
-            // 
-            // txtBillNo
-            // 
-            this.txtBillNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBillNo.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtBillNo.Location = new System.Drawing.Point(125, 76);
-            this.txtBillNo.MaxLength = 34;
-            this.txtBillNo.Name = "txtBillNo";
-            this.txtBillNo.Size = new System.Drawing.Size(276, 29);
-            this.txtBillNo.TabIndex = 17;
-            this.txtBillNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBillNo_KeyDown);
             // 
             // label2
             // 
@@ -170,7 +168,7 @@
             // 
             this.labScanNo.AutoSize = true;
             this.labScanNo.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labScanNo.Location = new System.Drawing.Point(119, 122);
+            this.labScanNo.Location = new System.Drawing.Point(119, 90);
             this.labScanNo.Name = "labScanNo";
             this.labScanNo.Size = new System.Drawing.Size(0, 21);
             this.labScanNo.TabIndex = 14;
@@ -179,7 +177,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(12, 122);
+            this.label5.Location = new System.Drawing.Point(12, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 21);
             this.label5.TabIndex = 13;
@@ -193,16 +191,6 @@
             this.labBillNo.Name = "labBillNo";
             this.labBillNo.Size = new System.Drawing.Size(0, 21);
             this.labBillNo.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(12, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 21);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "分运单号：";
             // 
             // groupBox1
             // 
@@ -274,15 +262,23 @@
             this.superGrid1.AllowUserToDeleteRows = false;
             this.superGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.superGrid1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.superGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.superGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.superGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.superGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.superGrid1.DefaultCellStyle = dataGridViewCellStyle2;
             this.superGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superGrid1.Location = new System.Drawing.Point(0, 0);
             this.superGrid1.MultiSelect = false;
@@ -292,18 +288,6 @@
             this.superGrid1.RowTemplate.Height = 35;
             this.superGrid1.Size = new System.Drawing.Size(1195, 496);
             this.superGrid1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(927, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 43);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "纠错";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ScanForm
             // 
@@ -339,7 +323,6 @@
         private System.Windows.Forms.Label labScanNo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labBillNo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdmuScan;
         private System.Windows.Forms.RadioButton rdAutoScan;
@@ -348,7 +331,6 @@
         private System.Windows.Forms.Label labFangXing;
         private System.Windows.Forms.Label labWuShuJu;
         private System.Windows.Forms.Label labChaYan;
-        private System.Windows.Forms.TextBox txtBillNo;
         private System.Windows.Forms.Label labMessage;
         private System.Windows.Forms.Label labNowScan;
         private System.Windows.Forms.Button button1;

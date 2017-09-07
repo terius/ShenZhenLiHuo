@@ -7,6 +7,8 @@ using System.Data.OleDb;
 using System.Collections;
 using System.Data.SqlClient;
 using System.Configuration;
+using Helpers;
+
 namespace DAL
 {
     public class COMMON
@@ -27,6 +29,7 @@ namespace DAL
 
         public int UID(string sql, Hashtable pararm = null)
         {
+            Loger.LogMessage(sql);
             //   SqlParameter[] parameters = BuildSqlParameters(pararm);
             return DbHelperSQL.ExecuteSql(sql, pararm);
         }
@@ -128,6 +131,7 @@ namespace DAL
 
         public DataRow GetOneRow(string sql, Hashtable paramlist = null)
         {
+            Loger.LogMessage(sql);
             DataTable dt = Query(sql, paramlist);
             DataRow row = null;
             if (dt != null && dt.Rows.Count > 0)
@@ -144,6 +148,7 @@ namespace DAL
 
         public DataTable Query(string sqlStr, Hashtable paramlist = null)
         {
+            Loger.LogMessage(sqlStr);
             DataTable dt = null;
 
             //  SqlParameter[] cmdParms = BuildSqlParameters(paramlist);

@@ -63,15 +63,12 @@ namespace ShenZhenLiHuo
                 if (billno.Length == 34)
                 {
                     billno = billno.Substring(22);
-                    labNowScan.Text = billno;
-                    int insertId = bll.InsertNewDataToTmp(billno,setMaxNo);
-                    AddNewGridRow(insertId);
-                    setMaxNo = 0;
                 }
-                else
-                {
-                    labMessage.Text = "条码长度错误！必须为34位条码";
-                }
+                labNowScan.Text = billno;
+                int insertId = bll.InsertNewDataToTmp(billno, setMaxNo);
+                AddNewGridRow(insertId);
+                setMaxNo = 0;
+
             }
         }
 
@@ -117,12 +114,7 @@ namespace ShenZhenLiHuo
                 {
                     tbNo.Text = "";
                 }
-                else if (txtBillNo.Focused)
-                {
-                    txtBillNo.Text = "";
-                    tbNo.Text = "";
-                    tbNo.Focus();
-                }
+
             }
         }
 
@@ -133,27 +125,7 @@ namespace ShenZhenLiHuo
 
         }
 
-        private void txtBillNo_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
 
-                ClearStatus();
-                string billno = txtBillNo.Text.Trim();
-                if (billno.Length == 12)
-                {
-                    labNowScan.Text = billno;
-                    int insertId = bll.InsertNewDataToTmp(billno,setMaxNo);
-                 
-                    AddNewGridRow(insertId);
-                    setMaxNo = 0;
-                }
-                else
-                {
-                    labMessage.Text = "条码长度错误！必须为12位条码";
-                }
-            }
-        }
 
         private void button1_Click(object sender, System.EventArgs e)
         {
