@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Helpers;
 using System;
 using System.Collections;
 using System.Data;
@@ -50,6 +51,18 @@ namespace ShenZhenLiHuo
 
         private void QueryData()
         {
+            DataTable dt = GetData();
+            if (dt != null)
+            {
+                this.superGrid1.DataSource = dt;
+                labALLText.Text = "扫描 " + dt.Rows.Count + " 件";
+                labStatusTEXT.Text = string.Format("放行 {0} 件    查验 {1} 件    无数据 {2} 件",
+                    dt.Select("FANGXING = 1").Length, dt.Select("CHAYAN = 1").Length, dt.Select("NODATA = 1").Length);
+            }
+        }
+
+        private DataTable GetData()
+        {
             StringBuilder sb = new StringBuilder();
             Hashtable ht = new Hashtable();
             string billno = tbBillNo.Text.Trim();
@@ -68,7 +81,7 @@ namespace ShenZhenLiHuo
             else if (rdHistory.Checked)
             {
                 MessageBox.Show("查询历史数据必须输入总运单号！");
-                return;
+                return null;
             }
             DateTime dtsix = DateTime.Now.Date.AddHours(6);
             ht["nowsix"] = dtsix;
@@ -81,9 +94,9 @@ namespace ShenZhenLiHuo
             }
             else
             {
-            
+
                 sb.Append(" and scan_time >= @nowsix");
-             
+
             }
             switch (cboxType.SelectedIndex)
             {
@@ -105,10 +118,7 @@ namespace ShenZhenLiHuo
              + " (case DEC_TYPE when 1 then 1 else 0 end) as CHAYAN,"
              + " (case SEND_TYPE when 2 then 1 else 0 end) as NODATA from " + table + " where 1=1 " + sb.ToString();
             DataTable dt = comm.Query(sql, ht);
-            this.superGrid1.DataSource = dt;
-            labALLText.Text = "扫描 " + dt.Rows.Count + " 件";
-            labStatusTEXT.Text = string.Format("放行 {0} 件    查验 {1} 件    无数据 {2} 件",
-                dt.Select("FANGXING = 1").Length, dt.Select("CHAYAN = 1").Length, dt.Select("NODATA = 1").Length);
+            return dt;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -137,6 +147,24 @@ namespace ShenZhenLiHuo
         private void rdHistory_CheckedChanged(object sender, EventArgs e)
         {
             CheckDate();
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            DataTable dt = GetData();
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.RestoreDirectory = true;
+                saveFileDialog1.FileName = "查询导出" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".xls";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    Hashtable ht = CommonHelper.GetDataGridViewColumns(this.superGrid1);
+                    ExcelHelper.Export(dt, saveFileDialog1.FileName, ht);
+                    MessageBox.Show("导出成功");
+                }
+
+            }
         }
     }
 }

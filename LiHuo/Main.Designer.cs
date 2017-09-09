@@ -50,19 +50,20 @@
             // 
             this.btnGJInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnGJInput.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnGJInput.Location = new System.Drawing.Point(21, 200);
+            this.btnGJInput.Location = new System.Drawing.Point(431, 86);
             this.btnGJInput.Name = "btnGJInput";
             this.btnGJInput.Size = new System.Drawing.Size(249, 82);
             this.btnGJInput.TabIndex = 1;
             this.btnGJInput.Text = "国检审单录入";
             this.btnGJInput.UseVisualStyleBackColor = false;
+            this.btnGJInput.Visible = false;
             this.btnGJInput.Click += new System.EventHandler(this.btnGJInput_Click);
             // 
             // btnScan
             // 
             this.btnScan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnScan.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnScan.Location = new System.Drawing.Point(302, 200);
+            this.btnScan.Location = new System.Drawing.Point(21, 200);
             this.btnScan.Name = "btnScan";
             this.btnScan.Size = new System.Drawing.Size(249, 82);
             this.btnScan.TabIndex = 2;
@@ -74,7 +75,7 @@
             // 
             this.btnQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnQuery.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnQuery.Location = new System.Drawing.Point(582, 200);
+            this.btnQuery.Location = new System.Drawing.Point(325, 200);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(249, 82);
             this.btnQuery.TabIndex = 3;

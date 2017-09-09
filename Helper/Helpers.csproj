@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="COMServer.cs" />
     <Compile Include="ExcelHelper.cs" />
     <Compile Include="Loger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

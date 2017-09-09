@@ -1,6 +1,8 @@
 ﻿using BLL;
 using DAL;
+using Helpers;
 using Microsoft.VisualBasic;
+using System;
 using System.Collections;
 using System.Data;
 using System.Drawing;
@@ -13,13 +15,33 @@ namespace ShenZhenLiHuo
         readonly COMMON comm = new COMMON();
         readonly ScanHeadBLL bll = new ScanHeadBLL();
         int setMaxNo = 0;
+        COMServer com;
+        readonly string scanFailCode = System.Configuration.ConfigurationManager.AppSettings["ScanFailCode"];
+        bool scanFailFlag;
         public ScanForm()
         {
             GlobalVariable.CreateTestLoginInfo();
             InitializeComponent();
             InitGridView();
             BindData();
+            com = new COMServer();
+            com.OnReceiveCOMData += (sn) =>
+            {
+                if (com.IsAutoScan)
+                {
+                    Loger.LogMessage("COM1口收到数据：" + sn);
+                    if (sn.Equals(scanFailCode, StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        scanFailFlag = true;
+                        labScanFail.BackColor = Color.Red;
+                        com.Send("#2,0");
+                        return;
+                    }
 
+                    tbNo.Text = sn;
+                    runSN();
+                }
+            };
         }
 
         private void BindData()
@@ -58,18 +80,31 @@ namespace ShenZhenLiHuo
         {
             if (e.KeyCode == Keys.Enter)
             {
-                ClearStatus();
-                string billno = tbNo.Text.Trim();
-                if (billno.Length == 34)
-                {
-                    billno = billno.Substring(22);
-                }
-                labNowScan.Text = billno;
-                int insertId = bll.InsertNewDataToTmp(billno, setMaxNo);
-                AddNewGridRow(insertId);
-                setMaxNo = 0;
+                runSN();
 
             }
+        }
+
+        private void runSN()
+        {
+            ClearStatus();
+            string billno = tbNo.Text.Trim();
+            if (billno.Length == 34)
+            {
+                billno = billno.Substring(22);
+            }
+            labNowScan.Text = billno;
+            int insertId = bll.InsertNewDataToTmp(billno, setMaxNo, com);
+            AddNewGridRow(insertId);
+            setMaxNo = 0;
+
+            if (scanFailFlag)
+            {
+                labScanFail.BackColor = Color.Silver;
+                com.Send("#2,1");
+                scanFailFlag = false;
+            }
+            tbNo.Text = "";
         }
 
         private void AddNewGridRow(int insertId)
@@ -141,6 +176,7 @@ namespace ShenZhenLiHuo
                 }
 
                 setMaxNo = itemp;
+                com.Send("#3," + setMaxNo);
             }
             else
             {
@@ -148,6 +184,39 @@ namespace ShenZhenLiHuo
             }
 
 
+        }
+
+        private void ScanForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            com.CloseSerialPort();
+        }
+
+        private void button2_Click(object sender, System.EventArgs e)
+        {
+            com.Send(DateTime.Now.Ticks.ToString());
+        }
+
+        private void rdAutoScan_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckScanType();
+        }
+
+        private void CheckScanType()
+        {
+            if (rdAutoScan.Checked)
+            {
+                com.IsAutoScan = true;
+            }
+            else
+            {
+                labScanFail.BackColor = Color.Silver;
+                com.IsAutoScan = false;
+            }
+        }
+
+        private void rdmuScan_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckScanType();
         }
 
 

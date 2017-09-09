@@ -49,12 +49,6 @@
   <ItemGroup>
     <Compile Include="CommonHelper.cs" />
     <Compile Include="GlobalVariable.cs" />
-    <Compile Include="Query.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Query.Designer.cs">
-      <DependentUpon>Query.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,9 +93,6 @@
     <Compile Include="UserManager.Designer.cs">
       <DependentUpon>UserManager.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Query.resx">
-      <DependentUpon>Query.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

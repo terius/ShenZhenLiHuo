@@ -8,12 +8,12 @@ namespace ShenZhenLiHuo
 
         public static void CreateTestLoginInfo()
         {
-            GlobalVariable.LoginUserInfo = new Model.UserInfo();
-            GlobalVariable.LoginUserInfo.HY_NAME = "联邦快递公司";
-            GlobalVariable.LoginUserInfo.id = 1;
-            GlobalVariable.LoginUserInfo.Lever = "3";
-            GlobalVariable.LoginUserInfo.UserName = "user001";
-            GlobalVariable.LoginUserInfo.UserPassword = "99999";
+            LoginUserInfo = new Model.UserInfo();
+            LoginUserInfo.HY_NAME = "联邦快递公司";
+            LoginUserInfo.id = 1;
+            LoginUserInfo.Lever = "3";
+            LoginUserInfo.UserName = "user001";
+            LoginUserInfo.UserPassword = "99999";
         }
     }
 }

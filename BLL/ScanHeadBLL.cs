@@ -10,7 +10,7 @@ namespace BLL
     {
         private readonly COMMON comm = new COMMON();
         int maxScanNo = 0;
-
+        COMServer _com;
 
         public void GetMaxSCANNO()
         {
@@ -18,8 +18,9 @@ namespace BLL
 
         }
 
-        public int InsertNewDataToTmp(string billno, int setMaxNo)
+        public int InsertNewDataToTmp(string billno, int setMaxNo, COMServer com)
         {
+            _com = com;
             int insertId = 0;
             if (setMaxNo > 0)
             {
@@ -57,7 +58,7 @@ namespace BLL
                 htparm["SCAN_NO"] = maxScanNo + 1;
                 htparm["SEND_TYPE"] = dr["DEC_TYPE"];
                 insertId = comm.InsertByHashtable("EHS_SCAN_TMP1", htparm, true);
-                WriteLog(insertId, htparm);
+                SendComData(insertId, htparm);
                 UpdateList2(dr["VOYAGE_NO"].ToString(), true);
                 UpdateHead(billno);
             }
@@ -71,12 +72,12 @@ namespace BLL
                     ht["I_E_FLAG"] = drLast["I_E_FLAG"].ToString();
                     ht["I_E_DATE"] = drLast["I_E_DATE"];
                     ht["PACK_NO"] = 1;
-                    ht["DEC_TYPE"] = 0;
+                    ht["DEC_TYPE"] = 1;
                     ht["SCAN_NO"] = maxScanNo + 1;
                     ht["Multi_Pack_No"] = 1;
                     ht["SEND_TYPE"] = 2;
                     insertId = comm.InsertByHashtable("EHS_SCAN_TMP1", ht, true);
-                    WriteLog(insertId, ht);
+                    SendComData(insertId, ht);
                     UpdateList2(drLast["VOYAGE_NO"].ToString(), true);
                 }
                 else
@@ -86,12 +87,12 @@ namespace BLL
                     ht["I_E_FLAG"] = "I";
                     ht["I_E_DATE"] = DateTime.Now;
                     ht["PACK_NO"] = 1;
-                    ht["DEC_TYPE"] = 0;
+                    ht["DEC_TYPE"] = 1;
                     ht["SCAN_NO"] = maxScanNo + 1;
                     ht["Multi_Pack_No"] = 1;
                     ht["SEND_TYPE"] = 2;
                     insertId = comm.InsertByHashtable("EHS_SCAN_TMP1", ht, true);
-                    WriteLog(insertId, ht);
+                    SendComData(insertId, ht);
                     UpdateList2("111111", true);
                 }
                
@@ -122,7 +123,7 @@ namespace BLL
                 dr["Multi_Pack_No"] = Convert.ToInt32(dr["Multi_Pack_No"]) + 1;
                 Hashtable htparm = DataRowToHashtable(dr, new string[] { "id", "scan_time" });
                 insertId = comm.InsertByHashtable("EHS_SCAN_TMP1", htparm, true);
-                WriteLog(insertId, htparm);
+                SendComData(insertId, htparm);
                 UpdateList2(dr["VOYAGE_NO"].ToString(), false);
                 UpdateHead(billno);
             }
@@ -133,9 +134,9 @@ namespace BLL
             return insertId;
         }
 
-        private void WriteLog(int insertId, Hashtable htparm)
+        private void SendComData(int insertId, Hashtable htparm)
         {
-            StringHelper.WriteLog(string.Format("#1,{0},{1},{2}",
+            _com.Send(string.Format("#1,{0},{1},{2}",
                 htparm["SCAN_NO"].ToString(), htparm["SEND_TYPE"].ToString(), htparm["BILL_NO"].ToString()));
             string sql = "update EHS_SCAN_TMP1 set send_time =getdate() where id=@id";
             Hashtable ht = new Hashtable();

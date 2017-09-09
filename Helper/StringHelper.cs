@@ -548,7 +548,7 @@ namespace Helpers
             try
             {
 
-                string path = AppDomain.CurrentDomain.BaseDirectory + "Actionlogs";
+                string path = AppDomain.CurrentDomain.BaseDirectory + "COMLogs";
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);
@@ -563,8 +563,7 @@ namespace Helpers
 
                 using (StreamWriter sw = new StreamWriter(path, true, Encoding.UTF8))
                 {
-                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\r\n" + msg
-                        + "\r\n-------------------------------------------------------------------------------\r\n");
+                    sw.WriteLine(msg+ "\r\n\r\n");
                     sw.Flush();
                     sw.Close();
                 }

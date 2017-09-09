@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.labNowScan = new System.Windows.Forms.Label();
             this.labMessage = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labScanFail = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labFangXing = new System.Windows.Forms.Label();
             this.labWuShuJu = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.labNowScan);
             this.panel1.Controls.Add(this.labMessage);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.labScanFail);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.labScanNo);
             this.panel1.Controls.Add(this.label5);
@@ -79,11 +79,11 @@
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(927, 21);
+            this.button1.Location = new System.Drawing.Point(880, 18);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 43);
             this.button1.TabIndex = 20;
-            this.button1.Text = "纠错";
+            this.button1.Text = "重置";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -106,17 +106,17 @@
             this.labMessage.Size = new System.Drawing.Size(0, 21);
             this.labMessage.TabIndex = 18;
             // 
-            // label2
+            // labScanFail
             // 
-            this.label2.BackColor = System.Drawing.Color.Silver;
-            this.label2.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1021, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 86);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "扫描失败";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labScanFail.BackColor = System.Drawing.Color.Silver;
+            this.labScanFail.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labScanFail.ForeColor = System.Drawing.Color.White;
+            this.labScanFail.Location = new System.Drawing.Point(1021, 101);
+            this.labScanFail.Name = "labScanFail";
+            this.labScanFail.Size = new System.Drawing.Size(143, 86);
+            this.labScanFail.TabIndex = 16;
+            this.labScanFail.Text = "扫描失败";
+            this.labScanFail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
@@ -213,6 +213,7 @@
             this.rdmuScan.TabIndex = 1;
             this.rdmuScan.Text = "手动扫描";
             this.rdmuScan.UseVisualStyleBackColor = true;
+            this.rdmuScan.CheckedChanged += new System.EventHandler(this.rdmuScan_CheckedChanged);
             // 
             // rdAutoScan
             // 
@@ -225,6 +226,7 @@
             this.rdAutoScan.TabStop = true;
             this.rdAutoScan.Text = "自动扫描";
             this.rdAutoScan.UseVisualStyleBackColor = true;
+            this.rdAutoScan.CheckedChanged += new System.EventHandler(this.rdAutoScan_CheckedChanged);
             // 
             // tbNo
             // 
@@ -262,23 +264,23 @@
             this.superGrid1.AllowUserToDeleteRows = false;
             this.superGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.superGrid1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.superGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.superGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.superGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.superGrid1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.superGrid1.DefaultCellStyle = dataGridViewCellStyle4;
             this.superGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superGrid1.Location = new System.Drawing.Point(0, 0);
             this.superGrid1.MultiSelect = false;
@@ -302,6 +304,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "扫描条码";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ScanForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -326,7 +329,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdmuScan;
         private System.Windows.Forms.RadioButton rdAutoScan;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labScanFail;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labFangXing;
         private System.Windows.Forms.Label labWuShuJu;
